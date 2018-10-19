@@ -24,6 +24,8 @@ type Reader struct {
 	checksum xxh32.XXHZero // Frame hash.
 }
 
+func (z *Reader) Close() error { return nil }
+
 // NewReader returns a new LZ4 frame decoder.
 // No access to the underlying io.Reader is performed.
 func NewReader(src io.Reader) *Reader {
